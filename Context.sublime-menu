@@ -2,6 +2,12 @@
 {
     "id" : "Eko Sublime Plugin",
     "caption" : "Eko Sublime Plugin",
-    "command" : "ekosublimeplugin"
+    "children":
+    [
+    {
+        "caption" : "run",
+        "command" : "ekosublimeplugin"
+    }
+    ]
 }
 ]
