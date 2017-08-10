@@ -1,0 +1,7 @@
+NOTES
+Links on autocomplete and word completion algorithms as well as sublime plugin doc:
+http://blog.notdot.net/2007/4/Damn-Cool-Algorithms-Part-1-BK-Trees
+http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata
+https://www.sublimetext.com/docs/3/api_reference.html#sublime_plugin.TextCommand
+
+look at sublime plugin doc for build examples
