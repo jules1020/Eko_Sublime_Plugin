@@ -5,3 +5,17 @@ http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata
 https://www.sublimetext.com/docs/3/api_reference.html#sublime_plugin.TextCommand
 
 look at sublime plugin doc for build examples
+
+sublime settings:
+{
+    "bold_folder_labels": true,
+    "color_scheme": "Packages/User/BlueLover (SL) (Flake8Lint).tmTheme",
+    "font_size": "12",
+    "ignored_packages":
+    [
+        "Vintage",
+        "WebGLCompletions"
+    ],
+    "theme": "Seti.sublime-theme",
+    "translate_tabs_to_spaces": true
+}
