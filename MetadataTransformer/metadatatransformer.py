@@ -1,9 +1,12 @@
 print("metadatatransformer.py")
 
-def transform(objectwithname):
+
+def transform(metadata):
     retval = []
-    replacement = objectwithname["name"]
-    trigger = replacement
-    retval.append(trigger)
-    retval.append(replacement)
+    for the_object in metadata:
+        autocomplete = []
+        trigger = the_object["name"]
+        autocomplete.append(the_object["name"])
+        autocomplete.append(trigger)
+        retval.append(autocomplete)
     return retval
