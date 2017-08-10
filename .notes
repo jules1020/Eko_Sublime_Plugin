@@ -10,6 +10,9 @@ https://cnpagency.com/blog/creating-sublime-text-3-plugins-part-2/
 
 look at sublime plugin doc for build examples
 
+documentation for st3 menus:
+http://docs.sublimetext.info/en/latest/customization/menus.html
+
 sublime settings:
 {
     "bold_folder_labels": true,

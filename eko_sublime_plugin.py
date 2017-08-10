@@ -26,4 +26,4 @@ class EkoSublimePlugin(sublime_plugin.EventListener):
 
     def is_relevant(self, scope):
         """Check to see if point is relevant."""
-        print "what the fuck is this"
+        return True
