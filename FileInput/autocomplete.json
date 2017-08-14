@@ -1,0 +1,2661 @@
+[
+  {
+    "name": "on",
+    "memberof": "InterludePlayer",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "RegExp"
+          ]
+        },
+        "description": "Name of the event to attach the listener to.",
+        "name": "evt"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Method to be called when the event is triggered.\nIf the function returns true, then it will be removed after calling.",
+        "name": "listener"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "An optional group name that this listener belongs to.",
+        "name": "listenerGroup"
+      }
+    ]
+  },
+  {
+    "name": "once",
+    "memberof": "InterludePlayer",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "RegExp"
+          ]
+        },
+        "description": "Name of the event to attach the listener to.",
+        "name": "evt"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Method to be called when the event is triggered.",
+        "name": "listener"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "An optional group name that this listener belongs to.",
+        "name": "listenerGroup"
+      }
+    ]
+  },
+  {
+    "name": "off",
+    "memberof": "InterludePlayer",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "RegExp"
+          ]
+        },
+        "description": "Name of the event to remove the listener from.",
+        "name": "evt"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Method to remove from the event.",
+        "name": "listener"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "If specified, then only those listeners which belong to this group are removed.",
+        "name": "listenerGroup"
+      }
+    ]
+  },
+  {
+    "name": "trigger",
+    "memberof": "InterludePlayer",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "RegExp"
+          ]
+        },
+        "description": "Name of the event to emit and execute listeners for.",
+        "name": "evt"
+      },
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "optional": true,
+        "description": "Optional arguments to be passed to each listener.",
+        "name": "...args"
+      }
+    ]
+  },
+  {
+    "name": "play",
+    "memberof": "InterludePlayer",
+    "kind": "function"
+  },
+  {
+    "name": "pause",
+    "memberof": "InterludePlayer",
+    "kind": "function"
+  },
+  {
+    "name": "isFullscreenSupported",
+    "memberof": "InterludePlayer",
+    "kind": "function"
+  },
+  {
+    "name": "requestFullscreen",
+    "memberof": "InterludePlayer",
+    "kind": "function"
+  },
+  {
+    "name": "exitFullscreen",
+    "memberof": "InterludePlayer",
+    "kind": "function"
+  },
+  {
+    "name": "push",
+    "memberof": "playlist",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node"
+          ]
+        },
+        "description": "A node id (of a node that exists in repository), or a node object.",
+        "name": "...node"
+      }
+    ]
+  },
+  {
+    "name": "reset",
+    "memberof": "playlist",
+    "kind": "function"
+  },
+  {
+    "name": "timeOffsetAtIndex",
+    "memberof": "playlist",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "description": "An integer in the range [0, playlist.length].",
+        "name": "index"
+      }
+    ]
+  },
+  {
+    "name": "initPlugin",
+    "memberof": "InterludePlayer",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "object"
+          ]
+        },
+        "description": "Plugin's name (string) or a map object with plugin names as keys and options as values.",
+        "name": "name"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "Optional configuration object to pass to plugin initialization function (only applies if first argument was a string).",
+        "name": "options"
+      }
+    ]
+  },
+  {
+    "name": "pluginInited",
+    "memberof": "InterludePlayer",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "Plugin's name.",
+        "name": "name"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* Additional plugin names.",
+        "name": "...name"
+      }
+    ]
+  },
+  {
+    "name": "add",
+    "memberof": "repository",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "object",
+            "Array.<object>"
+          ]
+        },
+        "description": "A node config object, or an array of node config objects, or multiple node config objects.",
+        "name": "...nodeConfigObj"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "**Required.** A string id for the node. Should be unique among the nodes registered with this repository instance.",
+        "name": "nodeConfigObj.id"
+      },
+      {
+        "type": {
+          "names": [
+            "object",
+            "string"
+          ]
+        },
+        "description": "**Required.** Interlude video descriptor (the contents of an IVD file). See {@link http://developer.interlude.fm/encoder-cli-manual|the encoding manual}.",
+        "name": "nodeConfigObj.source"
+      },
+      {
+        "type": {
+          "names": [
+            "Array.<string>"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* List of prefetch node IDs. See {@link module:Node#addPrefetch}.",
+        "name": "nodeConfigObj.prefetch"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* Any additional data to be attached to the node for later usage.",
+        "name": "nodeConfigObj.data"
+      }
+    ]
+  },
+  {
+    "name": "update",
+    "memberof": "repository",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "object",
+            "Array.<object>"
+          ]
+        },
+        "description": "A node config object, or an array of node config objects, or multiple node config objects.",
+        "name": "...nodeConfigObj"
+      }
+    ]
+  },
+  {
+    "name": "get",
+    "memberof": "repository",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "Array.<string>"
+          ]
+        },
+        "description": "A node id, or an array of ids, or multiple ids, or special value `all`.",
+        "name": "...id"
+      }
+    ]
+  },
+  {
+    "name": "remove",
+    "memberof": "repository",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "Array.<string>"
+          ]
+        },
+        "description": "A node id, or an array of ids, or multiple ids, or special value `all`.",
+        "name": "...id"
+      }
+    ]
+  },
+  {
+    "name": "has",
+    "memberof": "repository",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "A node id.",
+        "name": "id"
+      }
+    ]
+  },
+  {
+    "name": "reset",
+    "memberof": "repository",
+    "kind": "function"
+  },
+  {
+    "name": "append",
+    "memberof": "InterludePlayer",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node"
+          ]
+        },
+        "description": "Node object or node id (which was previously {@link module:repository#add|added to repository}).",
+        "name": "node"
+      }
+    ]
+  },
+  {
+    "name": "seek",
+    "memberof": "InterludePlayer",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node"
+          ]
+        },
+        "description": "Node object or node id (which was previously {@link module:repository#add|added to repository}).",
+        "name": "node"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "Optional offset (in seconds) from beginning of node.\nIf a negative value is given, it will be used as offset from end of node.\nThis will fail if requested offset is too close to end of node (allow at least 2 seconds before end of node, see {@link InterludePlayer#event:playlistcritical}).",
+        "name": "offset"
+      }
+    ]
+  },
+  {
+    "name": "switch",
+    "memberof": "InterludePlayer",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "number",
+            "string"
+          ]
+        },
+        "description": "Channel index to switch to. Special string values `next` and `prev` are also accepted.",
+        "name": "index"
+      }
+    ]
+  },
+  {
+    "name": "on",
+    "memberof": "Node",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "RegExp"
+          ]
+        },
+        "description": "Name of the event to attach the listener to.",
+        "name": "evt"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Method to be called when the event is triggered.\nIf the function returns true, then it will be removed after calling.",
+        "name": "listener"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "An optional group name that this listener belongs to.",
+        "name": "listenerGroup"
+      }
+    ]
+  },
+  {
+    "name": "off",
+    "memberof": "Node",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "RegExp"
+          ]
+        },
+        "description": "Name of the event to remove the listener from.",
+        "name": "evt"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Method to remove from the event.",
+        "name": "listener"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "If specified, then only those listeners which belong to this group are removed.",
+        "name": "listenerGroup"
+      }
+    ]
+  },
+  {
+    "name": "once",
+    "memberof": "Node",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "RegExp"
+          ]
+        },
+        "description": "Name of the event to attach the listener to.",
+        "name": "evt"
+      },
+      {
+        "type": {
+          "names": [
+            "function"
+          ]
+        },
+        "description": "Method to be called when the event is triggered.",
+        "name": "listener"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "An optional group name that this listener belongs to.",
+        "name": "listenerGroup"
+      }
+    ]
+  },
+  {
+    "name": "trigger",
+    "memberof": "Node",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "RegExp"
+          ]
+        },
+        "description": "Name of the event to emit and execute listeners for.",
+        "name": "evt"
+      },
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "optional": true,
+        "description": "Optional arguments to be passed to each listener.",
+        "name": "...args"
+      }
+    ]
+  },
+  {
+    "name": "addPrefetch",
+    "memberof": "Node",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "Child node id.",
+        "name": "prefetchNodeId"
+      }
+    ]
+  },
+  {
+    "name": "removePrefetch",
+    "memberof": "Node",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "Child node id.",
+        "name": "prefetchNodeId"
+      }
+    ]
+  },
+  {
+    "name": "add",
+    "memberof": "audio",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "object",
+            "Array.<object>"
+          ]
+        },
+        "description": "A howl description object. At the very least the object must contain `id` and `src` params. Also accepts an array of objects.\nThis object will be passed on to the Howl constructor, so see {@link https://github.com/goldfire/howler.js#options|Howl documentation} for additional options not listed here.",
+        "name": "descObj"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "**Required.** A unique string ID that can later be used to play or get the Howl instance.\nUse the reserved id `soundtrack` for a default soundtrack behavior (where `soundtrack` audio follows video playback).",
+        "name": "descObj.id"
+      },
+      {
+        "type": {
+          "names": [
+            "string",
+            "Array.<string>"
+          ]
+        },
+        "description": "**Required.** Audio source URL (or array of URLs in descending order of preference). See Howler's {@link https://github.com/goldfire/howler.js#src-array--required|src documentation}.",
+        "name": "descObj.src"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* Default `false`. When true, audio playback will follow the video playback (pause when video is paused, resume when video is resumed).\nUsing the reserved id `soundtrack` will set this to true.",
+        "name": "descObj.followVideoPlayback"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* Default `false`. When true (and `followVideoPlayback` is also true), will pause the audio while video is being seeked to a new position.",
+        "name": "descObj.pauseOnSeek"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* Default `undefined`. When `followVideoPlayback` is true, setting a numeric value will cause audio to fade in for `fadeInDuration` seconds.",
+        "name": "descObj.fadeInDuration"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* Default `undefined`. When `followVideoPlayback` is true, setting a numeric value will cause audio to fade out for `fadeOutDuration` seconds.",
+        "name": "descObj.fadeOutDuration"
+      }
+    ]
+  },
+  {
+    "name": "remove",
+    "memberof": "audio",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "Array.<string>"
+          ]
+        },
+        "description": "The sound id (or an array of ids).",
+        "name": "id"
+      }
+    ]
+  },
+  {
+    "name": "play",
+    "memberof": "audio",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "Array.<string>"
+          ]
+        },
+        "description": "The sound id (or an array of ids).",
+        "name": "id"
+      }
+    ]
+  },
+  {
+    "name": "pause",
+    "memberof": "audio",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "Array.<string>"
+          ]
+        },
+        "description": "The sound id (or an array of ids).",
+        "name": "id"
+      }
+    ]
+  },
+  {
+    "name": "stop",
+    "memberof": "audio",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "Array.<string>"
+          ]
+        },
+        "description": "The sound id (or an array of ids).",
+        "name": "id"
+      }
+    ]
+  },
+  {
+    "name": "get",
+    "memberof": "audio",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The sound id.",
+        "name": "id"
+      }
+    ]
+  },
+  {
+    "name": "has",
+    "memberof": "audio",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The sound id.",
+        "name": "id"
+      }
+    ]
+  },
+  {
+    "name": "isSupported",
+    "memberof": "canvas",
+    "kind": "function"
+  },
+  {
+    "name": "init",
+    "memberof": "canvas",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "An options object.",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "module:canvas~drawFrame"
+          ]
+        },
+        "optional": true,
+        "description": "A draw frame function that will be invoked every frame.\nSee {@link module:canvas~options#drawFrame}.",
+        "name": "options.drawFrame"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "Frequency of `drawFrame` invocations (number of frames per seconds).\nSee {@link module:canvas~options#fps}.",
+        "name": "options.fps"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "The `contextType` to be passed to {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext|getContext()}.\nSee {@link module:canvas~options#contextType}.",
+        "name": "options.contextType"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "The `contextAttributes` to be passed to {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext|getContext()}.\nSee {@link module:canvas~options#contextAttributes}.",
+        "name": "options.contextAttributes"
+      }
+    ]
+  },
+  {
+    "name": "dispose",
+    "memberof": "canvas",
+    "kind": "function"
+  },
+  {
+    "name": "stop",
+    "memberof": "control",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "module:Node",
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* New replay node (only relevant when in {@link module:control#active} mode).",
+        "name": "replayNode"
+      }
+    ]
+  },
+  {
+    "name": "replay",
+    "memberof": "control",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "module:Node",
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* New replay node (only relevant when in {@link module:control#active} mode).",
+        "name": "replayNode"
+      }
+    ]
+  },
+  {
+    "name": "addTab",
+    "memberof": "debug",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The tab's name.",
+        "name": "name"
+      },
+      {
+        "type": {
+          "names": [
+            "external:Element",
+            "string"
+          ]
+        },
+        "description": "The contents of the tab. Could be a DOM element or a string which will become the innerHTML of an element.",
+        "name": "contents"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "An options object.",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "The title of the tab.",
+        "name": "options.title"
+      }
+    ]
+  },
+  {
+    "name": "getTabContents",
+    "memberof": "debug",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The tab's name.",
+        "name": "name"
+      }
+    ]
+  },
+  {
+    "name": "switchTab",
+    "memberof": "debug",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The tab's name.",
+        "name": "name"
+      }
+    ]
+  },
+  {
+    "name": "setExtra",
+    "memberof": "debug",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "A string to be displayed on the top right hand corner.",
+        "name": "label"
+      }
+    ]
+  },
+  {
+    "name": "toggle",
+    "memberof": "debug",
+    "kind": "function"
+  },
+  {
+    "name": "add",
+    "memberof": "decision",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node"
+          ]
+        },
+        "description": "**Required.** The node (or node id) in which a decision should be made.",
+        "name": "parent"
+      },
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node",
+            "Array.<string>",
+            "Array.<module:Node>"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* An array of nodes or node ids that are considered as candidates to be played after the parent.",
+        "name": "children"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* An options object.",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "Default `0`. The time (in seconds) into the parent node when {@link module:decision#event:decision__DOT__start} event should be triggered.",
+        "name": "options.startTime"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "The time (in seconds) into the parent node when {@link module:decision#event:decision__DOT__end} event should be triggered.\nA decision should be made by then. The default value is *as late as possible*, ranging from 1.5 - 2.0 seconds prior to end of node (depending on the video playback {@link InterludePlayer#engine}).",
+        "name": "options.endTime"
+      },
+      {
+        "type": {
+          "names": [
+            "Array.<string>",
+            "Array.<module:Node>"
+          ]
+        },
+        "optional": true,
+        "description": "Array of nodes or node ids. If specified, the next node will be a random selection from this array.",
+        "name": "options.defaults"
+      },
+      {
+        "type": {
+          "names": [
+            "module:decision~decider"
+          ]
+        },
+        "optional": true,
+        "description": "If specified, will be called when the next node needs to be decided.",
+        "name": "options.decider"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "description": "Default `true`. If true, will ensure that the children are present on the prefetch array of the parent.",
+        "name": "options.prefetch"
+      },
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node",
+            "Array.<string>",
+            "Array.<module:Node>"
+          ]
+        },
+        "optional": true,
+        "description": "Same as the `children` argument. Can be specified as part of the options object and will take precedence over the children argument specified as a separate argument.",
+        "name": "options.children"
+      }
+    ]
+  },
+  {
+    "name": "update",
+    "memberof": "decision",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node"
+          ]
+        },
+        "description": "**Required.** The node (or node id) to update the decision of.",
+        "name": "parent"
+      },
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node",
+            "Array.<string>",
+            "Array.<module:Node>"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* An array of nodes or node ids that are considered as candidates to be played after the parent.",
+        "name": "children"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* An options object. Same as {@link module:decision#add} options.",
+        "name": "options"
+      }
+    ]
+  },
+  {
+    "name": "remove",
+    "memberof": "decision",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node"
+          ]
+        },
+        "description": "A node (or node id) that was previously added as a parent using {@link module:decision#add}.",
+        "name": "parent"
+      }
+    ]
+  },
+  {
+    "name": "data",
+    "memberof": "decision",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node"
+          ]
+        },
+        "description": "Node or node id.",
+        "name": "node"
+      }
+    ]
+  },
+  {
+    "name": "add",
+    "memberof": "overlays",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "**Required.** A unique id for the new overlay.",
+        "name": "id"
+      },
+      {
+        "type": {
+          "names": [
+            "external:Element"
+          ]
+        },
+        "description": "**Required.** A DOM element to be added as an overlay on top of the player.",
+        "name": "el"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* An options object.",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean",
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "Default `true`.\nIf true, overlay will be letterboxed, pillarboxed or pan&scanned to fit on top the video.\nSee {@link InterludePlayer~options#scaling}.\nAlso accepts string values `min` or `max`.",
+        "name": "options.boxing"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean",
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "Default `false`.\nIf true, overlay will be scaled (via CSS transform) to fill the player/letterbox/pillarbox, using the `width` and `height` options as the original dimension.\nAlso accepts string values `width`, `height`, `min` or `max` (which may change the overlay ratio, overriding either the `width` or `height` property).",
+        "name": "options.scaling"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "description": "Default `true`.\nIf true, overlays will have CSS value `pointer-events: auto` and clicks will not pass through overlay to underlying overlays. If false, clicks will pass through overlay.",
+        "name": "options.pointerEvents"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "Default `854`.\nThe original width of the overlay (value will be used when `scaling` is true, and `width`/`height` ratio will be used when `boxing` is true).",
+        "name": "options.width"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "Default `480`.\nThe original height of the overlay (value will be used when `scaling` is true, and `width`/`height` ratio will be used when `boxing` is true).",
+        "name": "options.height"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "description": "Default `true`.\nThe initial visibility state of the element.\nCan later be toggled by calling {@link module:overlays#show} and {@link module:overlays#hide}.",
+        "name": "options.visible"
+      },
+      {
+        "type": {
+          "names": [
+            "module:overlays~show"
+          ]
+        },
+        "optional": true,
+        "description": "Default `undefined`.\nA user function that will be executed whenever {@link module:overlays#show} is called for this overlay.\nThe main use-case is animation.",
+        "name": "options.show"
+      },
+      {
+        "type": {
+          "names": [
+            "module:overlays~hide"
+          ]
+        },
+        "optional": true,
+        "description": "Default `undefined`.\nA user function that will be executed whenever {@link module:overlays#hide} is called for this overlay.\nThe main use-case is animation.",
+        "name": "options.hide"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "Default `5000` (5 seconds).\nThe timeout (in milliseconds) after a call to {@link module:overlays#hide} afterwhich overlay will be forcibly hidden.",
+        "name": "options.hideTimeout"
+      }
+    ]
+  },
+  {
+    "name": "remove",
+    "memberof": "overlays",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "A unique id that's been previously registered with the overlays plugin (see {@link module:overlays#add}).",
+        "name": "id"
+      }
+    ]
+  },
+  {
+    "name": "get",
+    "memberof": "overlays",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "A unique id that's been previously registered with the overlays plugin (see {@link module:overlays#add}).",
+        "name": "id"
+      }
+    ]
+  },
+  {
+    "name": "has",
+    "memberof": "overlays",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "An overlay id.",
+        "name": "id"
+      }
+    ]
+  },
+  {
+    "name": "show",
+    "memberof": "overlays",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "A unique id that's been previously registered with the overlays plugin (see {@link module:overlays#add}).",
+        "name": "id"
+      },
+      {
+        "type": {
+          "names": [
+            "module:overlays~show"
+          ]
+        },
+        "description": "*Optional.* A user defined function to override the `show` function provided in {@link module:overlays#add} options.",
+        "name": "fn"
+      }
+    ]
+  },
+  {
+    "name": "hide",
+    "memberof": "overlays",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "A unique id that's been previously registered with the overlays plugin (see {@link module:overlays#add}).",
+        "name": "id"
+      },
+      {
+        "type": {
+          "names": [
+            "module:overlays~hide"
+          ]
+        },
+        "description": "*Optional.* A user defined function to override the `hide` function provided in {@link module:overlays#add} options.",
+        "name": "fn"
+      }
+    ]
+  },
+  {
+    "name": "open",
+    "memberof": "urls",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The url of the page to open.",
+        "name": "url"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* Target attribute, the 2nd argument of the {@link https://developer.mozilla.org/en-US/docs/Web/API/Window/open|window.open()} method.\nBy default the target will be `_blank` (which means it will open a new tab).",
+        "name": "target"
+      }
+    ]
+  },
+  {
+    "name": "register",
+    "memberof": "variables",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The variable's name.",
+        "name": "name"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "An optional options object (if this is the only argument, must include `name` param).",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "The variable's name. If invoked with `options` object as the only argument, this is **required**.",
+        "name": "options.name"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.*\nThe action that will be used when updating variable's value.\nValues `set` and `sum` are supported out of the box.\nYou can register custom actions via the {@link module:variables#registerAction} method.\nDefault: `'set'`.",
+        "name": "options.action"
+      },
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.*\nThe initial value of the variable.\nWhen the variable is reset, it'll be returned to this value.\nDefault: `''` for `set` / custom actions, and `0` for `sum` action.",
+        "name": "options.initialValue"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.*\nAn object that maps node ids to values.\nThese values will be set on the node object under `node.data.variables[variableName]`.\nEach node that has a property with this variable name will cause the value to be updated.\nDefault: `null`.",
+        "name": "options.dataSet"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.*\nWhen should the variable be updated?\nThis can be any event that's triggered on the player, as long as the first argument of this event is a node object.\nFor instance, you can set this to `'nodestart'` or `'playlistpush'`.\nDefault: `'playlistpush'`.",
+        "name": "options.updateOn"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.*\nWhen should the variable be reset to its *initialValue*?\nThis can be any event that's triggered on the player.\nDefault: `'playlistreset'`.",
+        "name": "options.resetOn"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.*\nIf true, will log variable updates/resets to console.\nDefault: `false`.",
+        "name": "options.verbose"
+      }
+    ]
+  },
+  {
+    "name": "getValue",
+    "memberof": "variables",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The variable's name.",
+        "name": "name"
+      }
+    ]
+  },
+  {
+    "name": "setValue",
+    "memberof": "variables",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The variable's name.",
+        "name": "name"
+      },
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "A new value to be assigned to the variable.",
+        "name": "newValue"
+      }
+    ]
+  },
+  {
+    "name": "registerAction",
+    "memberof": "variables",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "A unique action name.",
+        "name": "name"
+      },
+      {
+        "type": {
+          "names": [
+            "module:variables~actionFn"
+          ]
+        },
+        "description": "An action function.",
+        "name": "fn"
+      }
+    ]
+  },
+  {
+    "name": "connect",
+    "memberof": "variables",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node",
+            "RegExp",
+            "function",
+            "Array.<*>"
+          ]
+        },
+        "description": "The node (or nodes) from which to connect to (aka the {@link module:decision}'s parent).\nThis value can either be a string (*node id*), a {@link module:Node|node} object, a RegExp that will match one or more node ids,\na function that receives a {@link module:Node|node} object and returns `true` if it matches, or an array of any of these.",
+        "name": "from"
+      },
+      {
+        "type": {
+          "names": [
+            "module:variables~connectToFn"
+          ]
+        },
+        "description": "A callback function that will be invoked when it's time to make a decision.",
+        "name": "to"
+      }
+    ]
+  },
+  {
+    "name": "push",
+    "memberof": "looper",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "Node"
+          ]
+        },
+        "description": "The node id (or node object) to push to playlist and loop.",
+        "name": "...node"
+      }
+    ]
+  },
+  {
+    "name": "finish",
+    "memberof": "looper",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "description": "An options object which accepts the following params:",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "If true, will immediately seek to post-loop node (if exists).",
+        "name": "options.seek"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "description": "If true, all {@link module:playlist#push|player.playlist.push} and {@link InterludePlayer#append|player.append} calls that were made after the call to {@link module:looper#push|looper.push} will be ignored.",
+        "name": "options.ignoreAppendQueue"
+      }
+    ]
+  },
+  {
+    "name": "setShareParams",
+    "memberof": "share",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "an object of params to be added to the shared URL.",
+        "name": "params"
+      }
+    ]
+  },
+  {
+    "name": "updateOptions",
+    "memberof": "share",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "Initialization options object. See the {@link module:share~options|init options}.",
+        "name": "options"
+      }
+    ]
+  },
+  {
+    "name": "showOverlay",
+    "memberof": "share",
+    "kind": "function"
+  },
+  {
+    "name": "hideOverlay",
+    "memberof": "share",
+    "kind": "function"
+  },
+  {
+    "name": "share",
+    "memberof": "share",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The platform to which the project will be shared: `facebook`, `twitter`, `tumblr` or `googleplus`.",
+        "name": "platform"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "An optional options object.",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "Override the default title (Facebook and Tumblr).",
+        "name": "options.title"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "Tweet content or post's description (All except Google+).",
+        "name": "options.description"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "Override the default caption (Facebook).",
+        "name": "options.caption"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "Override the default image (Facebook).",
+        "name": "options.image"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "Tags and mentions to add to the tweet (Twitter).",
+        "name": "options.tags"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "description": "Should the {@link module:share#setShareParams|share params} functionality be disbaled. Default is `false`.",
+        "name": "options.disableShareParams"
+      }
+    ]
+  },
+  {
+    "name": "setItem",
+    "memberof": "storage",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The variable's key.",
+        "name": "key"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The variable's value.",
+        "name": "value"
+      },
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "NOT CURRENTLY USED.",
+        "name": "options"
+      }
+    ]
+  },
+  {
+    "name": "getItem",
+    "memberof": "storage",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The variable's key.",
+        "name": "key"
+      },
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "NOT CURRENTLY USED.",
+        "name": "options"
+      }
+    ]
+  },
+  {
+    "name": "removeItem",
+    "memberof": "storage",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The variable's key.",
+        "name": "key"
+      },
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "NOT CURRENTLY USED.",
+        "name": "options"
+      }
+    ]
+  },
+  {
+    "name": "clear",
+    "memberof": "storage",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The variable's key.",
+        "name": "key"
+      },
+      {
+        "type": {
+          "names": [
+            "*"
+          ]
+        },
+        "description": "NOT CURRENTLY USED.",
+        "name": "options"
+      }
+    ]
+  },
+  {
+    "name": "attach",
+    "memberof": "subtitles",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node"
+          ]
+        },
+        "description": "The node id (or node object) to attach the subtitles to.",
+        "name": "nodeId"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The URL to the `.srt` file or the contents of an `.srt` file.",
+        "name": "src"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* An options object.",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "Default `0`. Shift the subtitles timing by this many seconds (can also be negative).",
+        "name": "options.offset"
+      }
+    ]
+  },
+  {
+    "name": "detach",
+    "memberof": "subtitles",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node"
+          ]
+        },
+        "description": "The node id (or node object) to remove the subtitles from.",
+        "name": "nodeId"
+      }
+    ]
+  },
+  {
+    "name": "show",
+    "memberof": "subtitles",
+    "kind": "function"
+  },
+  {
+    "name": "hide",
+    "memberof": "subtitles",
+    "kind": "function"
+  },
+  {
+    "name": "register",
+    "memberof": "pixi",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The name of the applet.",
+        "name": "name"
+      },
+      {
+        "type": {
+          "names": [
+            "object",
+            "module:pixi~appletCreateFn"
+          ]
+        },
+        "description": "An object that contains a {@link module:pixi~appletCreateFn|create()} function, and optionally a {@link module:pixi~appletDestroyFn|destroy()} function.\nThe {@link module:pixi~appletCreateFn|create()} function will be invoked when it's time to display the node's container.\nIf a function is given, it'll be used as the {@link module:pixi~appletCreateFn|create()} callback.",
+        "name": "applet"
+      }
+    ]
+  },
+  {
+    "name": "attach",
+    "memberof": "pixi",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node",
+            "RegExp",
+            "function",
+            "Array.<*>"
+          ]
+        },
+        "description": "The node (or nodes) to attach the applet to.\nThis value can either be a string (*node id*), a {@link module:Node|node} object, a RegExp that will match one or more node ids,\na function that receives a {@link module:Node|node} object and returns `true` if it matches, or an array of any of these.",
+        "name": "node"
+      },
+      {
+        "type": {
+          "names": [
+            "object",
+            "module:pixi~appletCreateFn",
+            "string"
+          ]
+        },
+        "description": "An object that contains a {@link module:pixi~appletCreateFn|create()} function, and optionally a {@link module:pixi~appletDestroyFn|destroy()} function.\n{@link module:pixi~appletCreateFn|create()} function will be invoked when it's time to display the node's container.\nIf a function is given, it'll be used as the {@link module:pixi~appletCreateFn|create()} callback.\nIf a string is given, it'll use the pre-{@link module:pixi#register|registered} applet with that name.",
+        "name": "applet"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "An optional options object. This will be the 4th argument of the applet's {@link module:pixi~appletCreateFn|create()} function.",
+        "name": "options"
+      }
+    ]
+  },
+  {
+    "name": "createVideoSprite",
+    "memberof": "pixi",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "description": "The x value, relative to videoWidth.",
+        "name": "x"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "description": "The y value, relative to videoHeight.",
+        "name": "y"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "description": "The width, relative to videoWidth.",
+        "name": "width"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "description": "The height, relative to videoHeight.",
+        "name": "height"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* The x and width values will be calculated relative to this value.\nThis value represents the total width of the video.\nIf not given, will use the initial {@link module:pixi~options#videoWidth} config value.",
+        "name": "videoWidth"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* The y and height values will be calculated relative to this value.\nThis value represents the total height of the video.\nIf not given, will use the initial {@link module:pixi~options#videoHeight} config value.",
+        "name": "videoHeight"
+      }
+    ]
+  },
+  {
+    "name": "createVideoSpriteFromNodeChannel",
+    "memberof": "pixi",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node"
+          ]
+        },
+        "description": "The node id or node object.",
+        "name": "node"
+      },
+      {
+        "type": {
+          "names": [
+            "number"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* The zero-based channel index. If not given, will create sprite of first channel (index 0).",
+        "name": "channel"
+      }
+    ]
+  },
+  {
+    "name": "attach",
+    "memberof": "sparks",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node",
+            "Array.<string>",
+            "Array.<module:Node>"
+          ]
+        },
+        "description": "The node (or node id) or array of nodes (or nodes ids) to be attached as 'sparkable' nodes.",
+        "name": "node"
+      },
+      {
+        "type": {
+          "names": [
+            "object"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* An options object. If given it will be referred to all the nodes that were given in the first argument.",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional.* If a value was given it will override the value of the plugin initialization option {@link module:sparks~options#playSparkOnSeek} for the specific nodes.\nIf true and {@link InterludePlayer#seek|player.seek} function was executed during the attached node, first the spark will be played and then seek to the desired node.\nIf false, the spark won't be played and it immediately seek to the desired node.",
+        "name": "options.playSparkOnSeek"
+      }
+    ]
+  },
+  {
+    "name": "detach",
+    "memberof": "sparks",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string",
+            "module:Node",
+            "Array.<string>",
+            "Array.<module:Node>"
+          ]
+        },
+        "description": "The node (or node id) or array of nodes (or nodes ids) to be detached.",
+        "name": "node"
+      }
+    ]
+  },
+  {
+    "name": "version",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "volume",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "muted",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "videoWidth",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "videoHeight",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "containerWidth",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "containerHeight",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "container",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "paused",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "duration",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "currentTime",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "currentNode",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "currentNodeIndex",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "currentNodeTimeOffset",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "currentNodeDuration",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "currentNodeTime",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "currentNodeRemainingTime",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "engine",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "isFullscreen",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "length",
+    "memberof": "playlist",
+    "kind": "member"
+  },
+  {
+    "name": "initedPlugins",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "score",
+    "memberof": "qoe",
+    "kind": "member"
+  },
+  {
+    "name": "status",
+    "memberof": "qoe",
+    "kind": "member"
+  },
+  {
+    "name": "envFps",
+    "memberof": "qoe",
+    "kind": "member"
+  },
+  {
+    "name": "currentChannel",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "duration",
+    "memberof": "Node",
+    "kind": "member"
+  },
+  {
+    "name": "bindVolumeToPlayer",
+    "memberof": "audio",
+    "kind": "member"
+  },
+  {
+    "name": "videoVolume",
+    "memberof": "audio",
+    "kind": "member"
+  },
+  {
+    "name": "volume",
+    "memberof": "audio",
+    "kind": "member"
+  },
+  {
+    "name": "muted",
+    "memberof": "audio",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "audio",
+    "kind": "member"
+  },
+  {
+    "name": "canvas",
+    "memberof": "canvas",
+    "kind": "member"
+  },
+  {
+    "name": "context",
+    "memberof": "canvas",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "canvas",
+    "kind": "member"
+  },
+  {
+    "name": "active",
+    "memberof": "control",
+    "kind": "member"
+  },
+  {
+    "name": "replayNode",
+    "memberof": "control",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "control",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "debug",
+    "kind": "member"
+  },
+  {
+    "name": "prefetch",
+    "memberof": "decision",
+    "kind": "member"
+  },
+  {
+    "name": "autoPushSingleChild",
+    "memberof": "decision",
+    "kind": "member"
+  },
+  {
+    "name": "decider",
+    "memberof": "decision",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "decision",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "overlays",
+    "kind": "member"
+  },
+  {
+    "name": "React",
+    "memberof": "uitools",
+    "kind": "member"
+  },
+  {
+    "name": "ReactDOM",
+    "memberof": "uitools",
+    "kind": "member"
+  },
+  {
+    "name": "TweenMax",
+    "memberof": "uitools",
+    "kind": "member"
+  },
+  {
+    "name": "tinycolor",
+    "memberof": "uitools",
+    "kind": "member"
+  },
+  {
+    "name": "beziereasing",
+    "memberof": "uitools",
+    "kind": "member"
+  },
+  {
+    "name": "Fastclick",
+    "memberof": "uitools",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "uitools",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "urls",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "variables",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "looper",
+    "kind": "member"
+  },
+  {
+    "name": "visible",
+    "memberof": "share",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "share",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "storage",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "subtitles",
+    "kind": "member"
+  },
+  {
+    "name": "PIXI",
+    "memberof": "pixi",
+    "kind": "member"
+  },
+  {
+    "name": "renderer",
+    "memberof": "pixi",
+    "kind": "member"
+  },
+  {
+    "name": "stage",
+    "memberof": "pixi",
+    "kind": "member"
+  },
+  {
+    "name": "fps",
+    "memberof": "pixi",
+    "kind": "member"
+  },
+  {
+    "name": "defaultApplet",
+    "memberof": "pixi",
+    "kind": "member"
+  },
+  {
+    "name": "width",
+    "memberof": "pixi",
+    "kind": "member"
+  },
+  {
+    "name": "height",
+    "memberof": "pixi",
+    "kind": "member"
+  },
+  {
+    "name": "videoWidth",
+    "memberof": "pixi",
+    "kind": "member"
+  },
+  {
+    "name": "videoHeight",
+    "memberof": "pixi",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "pixi",
+    "kind": "member"
+  },
+  {
+    "name": "tags",
+    "memberof": "sparks",
+    "kind": "member"
+  },
+  {
+    "name": "version",
+    "memberof": "sparks",
+    "kind": "member"
+  },
+  {
+    "name": "registerPlugin",
+    "memberof": "InterludePlayer",
+    "kind": "function",
+    "params": [
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "description": "The plugin's name.",
+        "name": "name"
+      },
+      {
+        "type": {
+          "names": [
+            "InterludePlayer~pluginInitFunction"
+          ]
+        },
+        "description": "The plugin initialization function. It will be executed whenever an InterludePlayer instance initializes this plugin.",
+        "name": "fn"
+      },
+      {
+        "type": {
+          "names": [
+            "object",
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "description": "An optional options object. If a boolean is given, it will apply to the autoInit option.",
+        "name": "options"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean"
+          ]
+        },
+        "optional": true,
+        "description": "If true, plugin will be initialized automatically whenever a new player instance is created. Default: `false`.",
+        "name": "options.autoInit"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "The version of the plugin. Default: `'0.0.0'`.",
+        "name": "options.version"
+      },
+      {
+        "type": {
+          "names": [
+            "Array.<string>",
+            "Array.<object>"
+          ]
+        },
+        "optional": true,
+        "description": "An array of plugin dependencies (other plugins that must be initialized before initializing this plugin). Default: `[]` (empty array).\nEach item in the array can either be a string (plugin name), or an object.",
+        "name": "options.deps"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "**Required**. The name of the plugin this plugin depends on.",
+        "name": "options.deps[].name"
+      },
+      {
+        "type": {
+          "names": [
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional*. Default `0.0.0`. The minimum required version of the plugin (a semver string).",
+        "name": "options.deps[].version"
+      },
+      {
+        "type": {
+          "names": [
+            "boolean",
+            "string"
+          ]
+        },
+        "optional": true,
+        "description": "*Optional*. Default `false`. Whether or not this is an optional dependency.<br/>\nPossible values:<br/>\n`false` - Default. The dependency is manadatory - plugin initialization will fail if dependency is not found.<br/>\n`true` - Dependency is optional - initializing this plugin will not fail if dependency was not found.<br/>\n`'orderonly'` - Dependency is optional - dependency will be initialized first, but only if explicitly requested on the same call to {@link InterludePlayer#initPlugin}.",
+        "name": "options.deps[].optional"
+      }
+    ]
+  },
+  {
+    "name": "isSupported",
+    "memberof": "InterludePlayer",
+    "kind": "function"
+  },
+  {
+    "name": "isDeviceSupported",
+    "memberof": "InterludePlayer",
+    "kind": "function"
+  },
+  {
+    "name": "supportedEngines",
+    "memberof": "InterludePlayer",
+    "kind": "function"
+  },
+  {
+    "name": "version",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "ivdVersion",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "environment",
+    "memberof": "InterludePlayer",
+    "kind": "member"
+  },
+  {
+    "name": "screenDisplay",
+    "memberof": "subtitles",
+    "kind": "member"
+  }
+]
