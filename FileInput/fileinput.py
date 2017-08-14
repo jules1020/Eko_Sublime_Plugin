@@ -1,10 +1,13 @@
 import json
+import urllib.request
 
 
 def transform(metadata):
     retval = []
-    with open("autocomplete.json") as file_object:
-        metadata = json.load(file_object)
+    with urllib.request.urlopen(
+            "https://developer.helloeko.com/api/autocomplete.json")\
+            as url:
+            metadata = json.loads(url.read().decode())
     for the_object in metadata:
         autocomplete = []
 

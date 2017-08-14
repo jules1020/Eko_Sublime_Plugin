@@ -1,23 +1,19 @@
 """Import modules."""
 import sublime
 import sublime_plugin
+import urllib.request
+import json
 
 
 class EkoSublimePlugin(sublime_plugin.EventListener):
     """Sublime_plugin.EventListener."""
 
     def on_query_completions(self, view, prefix, locations):
-        """Called whenever completions are to be presented to the user."""
-        longname = ''.join(['o', 'b', 'j', 'e', 'c', 't', 'w', 'i', 't', 's', 'h', 'o', 'r', 't', 'n', 'a', 'm', 'e'])
         return ([
-            ["me1\teko player method", "method1()"],
-            ["me2\tmethod", "method2()"],
-            [longname, longname],
-            ["fn", "def ${1:name}($2) { $0 }"],
-            ["for", "for ($1; $2; $3) { $0 }"],
-        ])
+            ["on\tEko InterludePlayer Method", "on"],
+            ["update\tEko Repository Method", "update"],
+            ["pluginInited\tEko InterludePlayer Method", "pluginInited"],
+            ["once\tEko Node Method", "once"],
+            ["trigger\tEko Node Method", "trigger"],
+            ["version\tEko InterludePlayer Member", "version"]])
 
-    def metadata2array(self, metadata):
-        """Take in metadata and outputs an array to be used in autocomplete."""
-        array = ["isFull", "isFullscreenSupported"]
-        return array
