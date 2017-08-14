@@ -1,5 +1,13 @@
 NOTES
-Links on autocomplete and word completion algorithms as well as sublime plugin doc:
+
+August 14th:
+Need to figure out how to get the array that is outputed from my 
+fileinput.py function to the on_query_completion function.
+
+*********************************************************************
+*********************************************************************
+Links on autocomplete and word completion algorithms as well as 
+sublime plugin doc:
 http://blog.notdot.net/2007/4/Damn-Cool-Algorithms-Part-1-BK-Trees
 http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata
 https://www.sublimetext.com/docs/3/api_reference.html#sublime_plugin.TextCommand
@@ -26,3 +34,5 @@ sublime settings:
     "theme": "Seti.sublime-theme",
     "translate_tabs_to_spaces": true
 }
+*********************************************************************
+*********************************************************************
