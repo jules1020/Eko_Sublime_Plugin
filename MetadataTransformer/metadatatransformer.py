@@ -1,7 +1,6 @@
 
 def transform(metadata):
     """Transform JSON data into lists for on_query_completions listener."""
-    global retval
     retval = []
     for the_object in metadata:
         autocomplete = []
