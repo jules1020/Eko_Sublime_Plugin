@@ -1,7 +1,7 @@
 """Import modules."""
 import sublime_plugin
-import json
 import urllib.request
+import json
 
 
 class EkoSublimePlugin(sublime_plugin.EventListener):
@@ -11,12 +11,14 @@ class EkoSublimePlugin(sublime_plugin.EventListener):
     retval = []
 
     def url_to_json(metadata):
+        """Load the JSON file from a URL."""
         with urllib.request.urlopen(metadata) as url:
             data = json.loads(url.read().decode())
             return (data)
     url_to_json("https://developer.helloeko.com/api/autocomplete.json")
 
     def transform(json):
+        """Transform JSON data into lists for on_query_completions listener."""
         for the_object in json:
             autocomplete = []
 
@@ -40,4 +42,9 @@ class EkoSublimePlugin(sublime_plugin.EventListener):
         "https://developer.helloeko.com/api/autocomplete.json"))
 
     def on_query_completions(self, view, prefix, locations):
-        return (retval)
+        """
+        Called whenever completions are to be presented to the user.
+
+        The prefix is a unicode string of the text to complete.
+        """
+        return(retval)
