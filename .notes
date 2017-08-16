@@ -2,6 +2,7 @@ NOTES
 
 August 16th:
 Make sure I'm loading the JSON as the plugin initliazes, not on each completion event.
+Also optimize test_metadatatransformer for each condition.
 
 August 14th:
 Need to figure out how to get the array that is outputed from my 
