@@ -8,6 +8,6 @@ def search(directory):
             for x in os.walk(dirname):
                 for file in filelist:
                     node_id = file.rstrip('.js')
-                    print(node_id)
+                    return node_id
 
 search(Path('.'))
