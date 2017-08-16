@@ -8,4 +8,3 @@ def url_to_json(metadata):
     with urllib.request.urlopen(metadata) as url:
         data = json.loads(url.read().decode())
         return (data)
-

@@ -1,8 +1,8 @@
 """Import modules."""
 import sublime
 import sublime_plugin
-from . import get_json
-from . import metadatatransformer
+from . import utils
+from . import MetadataTransformer
 
 
 class EkoSublimePlugin(sublime_plugin.EventListener):
@@ -14,5 +14,6 @@ class EkoSublimePlugin(sublime_plugin.EventListener):
 
         The prefix is a unicode string of the text to complete.
         """
-        return (metadatatransformer.transform(get_json.url_to_json(
-            "https://developer.helloeko.com/api/autocomplete.json")))
+        return (MetadataTransformer.metadatatransformer.transform(
+            utils.get_json.url_to_json(
+                "https://developer.helloeko.com/api/autocomplete.json")))
