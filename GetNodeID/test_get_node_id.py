@@ -7,7 +7,7 @@ class TestGetNodeID(unittest.TestCase):
     def test_iteratefolders(self):
         directory = Path('.')
         result = get_node_id.search(directory)
-        expected_result = 'node_beginning_39j7h2'
+        expected_result = ['node_beginning_39j7h2', 'node_julian_j391jg']
         self.assertEqual(result, expected_result)
 
 if __name__ == "__main__":
