@@ -1,5 +1,8 @@
 NOTES
 
+August 16th:
+Make sure I'm loading the JSON as the plugin initliazes, not on each completion event.
+
 August 14th:
 Need to figure out how to get the array that is outputed from my 
 fileinput.py function to the on_query_completion function.

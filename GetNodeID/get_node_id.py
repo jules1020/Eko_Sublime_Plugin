@@ -1,9 +1,13 @@
 from pathlib import Path
+import os
 
 
-def search(directory_in_str):
-    pathlist = Path(directory_in_str).glob('**/*.')
-    for path in pathlist:
-        path_in_str = str(path)
-        print(path_in_str)
-        return path_in_str
+def search(directory):
+    for dirname, subdirlist, filelist in os.walk(directory):
+        if dirname == "./src/_eko_/js/auto_generated/nodes":
+            for x in os.walk(dirname):
+                for file in filelist:
+                    node_id = file.rstrip('.js')
+                    print(node_id)
+
+search(Path('.'))
