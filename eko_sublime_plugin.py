@@ -1,5 +1,9 @@
-"""Import modules."""
-import sublime
+"""
+Import sublime_plugin,threading, utils, and MetadataTransformer modules.
+
+Utils and MetadataTransformer used to transform and load json.
+Threading used to not block this thread when loading json.
+"""
 import sublime_plugin
 import threading
 from . import utils
@@ -7,7 +11,7 @@ from . import MetadataTransformer
 
 
 class EkoSublimePlugin(sublime_plugin.EventListener):
-    """Sublime_plugin.EventListener."""
+    """This is the Eko Sublime Plugin Autocompelte feature."""
 
     def __init__(self):
         """
