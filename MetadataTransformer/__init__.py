@@ -1,2 +1,2 @@
-"""Importing metadatatransformer."""
+"""Import metadatatransformer."""
 from . import metadatatransformer

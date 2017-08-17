@@ -8,6 +8,7 @@ import sublime_plugin
 import threading
 from . import utils
 from . import MetadataTransformer
+from . import GetNodeID
 
 
 class EkoSublimePlugin(sublime_plugin.EventListener):

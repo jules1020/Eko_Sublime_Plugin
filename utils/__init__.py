@@ -1,2 +1,2 @@
-"""Importing get_json."""
+"""Import get_json."""
 from . import get_json

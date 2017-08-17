@@ -1,4 +1,6 @@
 NOTES
+August 17th:
+Need to append `node_ids` to `on_query_completions` in correct format.
 
 August 16th:
 Make sure I'm loading the JSON as the plugin initliazes, not on each completion event.
