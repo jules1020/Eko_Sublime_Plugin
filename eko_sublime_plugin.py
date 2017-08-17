@@ -8,7 +8,7 @@ from . import MetadataTransformer
 class EkoSublimePlugin(sublime_plugin.EventListener):
     """Sublime_plugin.EventListener."""
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self):
         """
         Access the super of sublime_plugin.EventListener.
 
