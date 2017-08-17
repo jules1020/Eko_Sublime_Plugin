@@ -29,7 +29,6 @@ class EkoSublimePlugin(sublime_plugin.EventListener):
 
         Populate the trasnformed json.
         """
-        print('populate_transformed_json')
         self.transformed_json = \
             MetadataTransformer.metadatatransformer.transform(
                 utils.get_json.url_to_json(
